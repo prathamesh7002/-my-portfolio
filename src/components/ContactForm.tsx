@@ -132,9 +132,7 @@ const ContactForm = () => {
           </>
         )}
       </Button>
-      <p className="text-xs text-muted-foreground text-center pt-4">
-        Note: For this form to work, EmailJS environment variables must be set.
-      </p>
+      
     </form>
   );
 };
