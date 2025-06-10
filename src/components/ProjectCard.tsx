@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -28,9 +29,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         </CardDescription>
       </CardContent>
       <CardFooter className="flex flex-wrap gap-2 pt-4 border-t">
-        {project.links.map((link) => (
+        {project.links.map((link, linkIndex) => (
           <Button
-            key={link.type}
+            key={`${link.type}-${linkIndex}`}
             asChild
             variant={link.type === 'live' ? 'default' : 'outline'}
             size="sm"
@@ -44,8 +45,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 <link.icon className="mr-2 h-4 w-4" /> {link.text}
               </Link>
             ) : (
-              // For "Details on request", link to contact section with prefill (optional advanced)
-              // Or simply display text if no URL. Here, linking to contact page as an example.
+              // For "Details on request", link to contact section
               <Link href="#contact">
                 <link.icon className="mr-2 h-4 w-4" /> {link.text}
               </Link>

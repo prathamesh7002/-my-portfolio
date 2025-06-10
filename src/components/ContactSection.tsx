@@ -10,6 +10,7 @@ const ContactSection = () => {
   const contactEmail = "prathmeshsaharkar@gmail.com";
   const contactLocation = "Nagpur, India";
 
+
   return (
     <SectionWrapper id="contact" className="bg-secondary/30 dark:bg-secondary/10">
       <div className="text-center mb-12">

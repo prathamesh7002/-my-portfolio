@@ -3,6 +3,7 @@ import { socialLinks } from "@/lib/data";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  
   return (
     <footer className="bg-secondary/50 dark:bg-secondary/20 text-secondary-foreground py-8">
       <div className="container mx-auto px-4 text-center">
