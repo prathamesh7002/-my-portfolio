@@ -27,7 +27,7 @@ const Navbar = () => {
     )}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="#home" className="text-lg md:text-xl font-headline font-semibold text-foreground hover:text-primary transition-colors">
-          Prathamesh Saharkar <span className="hidden sm:inline">| Aspiring IT Innovator</span>
+          Prathamesh Saharkar <span className="hidden sm:inline">| Aspiring IT Student</span>
         </Link>
         <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
           {navLinks.map((link) => (

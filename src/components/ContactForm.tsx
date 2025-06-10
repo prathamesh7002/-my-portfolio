@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2 } from "lucide-react";
+import { Loader2, Send } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
@@ -36,7 +36,6 @@ const ContactForm = () => {
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     setIsLoading(true);
     try {
-      // Replace with your EmailJS Service ID, Template ID, and Public Key
       const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID";
       const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID";
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY";
@@ -72,26 +71,26 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 max-w-lg mx-auto">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div>
-        <Label htmlFor="name" className="text-foreground">Name</Label>
+        <Label htmlFor="name" className="text-foreground">Full Name</Label>
         <Input
           id="name"
           {...register("name")}
           placeholder="Your Name"
-          className="mt-1 bg-background/70 focus:bg-background"
+          className="mt-1 bg-card focus:bg-background/70"
           aria-invalid={errors.name ? "true" : "false"}
         />
         {errors.name && <p className="text-sm text-destructive mt-1">{errors.name.message}</p>}
       </div>
       <div>
-        <Label htmlFor="email" className="text-foreground">Email</Label>
+        <Label htmlFor="email" className="text-foreground">Email Address</Label>
         <Input
           id="email"
           type="email"
           {...register("email")}
           placeholder="your.email@example.com"
-          className="mt-1 bg-background/70 focus:bg-background"
+          className="mt-1 bg-card focus:bg-background/70"
           aria-invalid={errors.email ? "true" : "false"}
         />
         {errors.email && <p className="text-sm text-destructive mt-1">{errors.email.message}</p>}
@@ -103,7 +102,7 @@ const ContactForm = () => {
           {...register("message")}
           placeholder="Your message..."
           rows={5}
-          className="mt-1 bg-background/70 focus:bg-background"
+          className="mt-1 bg-card focus:bg-background/70"
           aria-invalid={errors.message ? "true" : "false"}
         />
         {errors.message && <p className="text-sm text-destructive mt-1">{errors.message.message}</p>}
@@ -115,11 +114,14 @@ const ContactForm = () => {
             Sending...
           </>
         ) : (
-          "Send Message"
+          <>
+            <Send className="mr-2 h-4 w-4" />
+            Send Message
+          </>
         )}
       </Button>
-      <p className="text-xs text-muted-foreground text-center">
-        Note: For this form to work, EmailJS environment variables (<code>NEXT_PUBLIC_EMAILJS_SERVICE_ID</code>, <code>NEXT_PUBLIC_EMAILJS_TEMPLATE_ID</code>, <code>NEXT_PUBLIC_EMAILJS_PUBLIC_KEY</code>) must be set in your <code>.env.local</code> file.
+      <p className="text-xs text-muted-foreground text-center pt-4">
+        Note: For this form to work, EmailJS environment variables must be set.
       </p>
     </form>
   );

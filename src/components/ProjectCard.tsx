@@ -14,18 +14,6 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
   return (
     <Card className="flex flex-col h-full overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-103 transition-all duration-300 group animate-zoom-in" style={{animationDelay: `${index * 0.1}s`}}>
-      {project.imageSrc && (
-        <div className="relative w-full h-48 md:h-56 overflow-hidden">
-          <Image
-            src={project.imageSrc}
-            alt={project.title}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover group-hover:scale-110 transition-transform duration-500"
-            data-ai-hint={project.imageHint || "project technology"}
-          />
-        </div>
-      )}
       <CardHeader>
         <CardTitle className="font-headline text-xl md:text-2xl text-foreground">{project.title}</CardTitle>
         <div className="flex flex-wrap gap-2 mt-2">
