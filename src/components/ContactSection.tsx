@@ -14,6 +14,7 @@ const ContactSection = () => {
     <SectionWrapper id="contact" className="bg-secondary/30 dark:bg-secondary/10">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary">Get In Touch</h2>
+        <p className="text-lg text-muted-foreground mt-2">Have a project in mind, a question, or just want to say hi? Feel free to reach out.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">

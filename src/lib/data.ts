@@ -1,3 +1,4 @@
+
 import type { LucideIcon } from 'lucide-react';
 import { Github, Linkedin, Instagram, ExternalLink, Mail } from 'lucide-react';
 
@@ -71,8 +72,8 @@ export const projectsData: Project[] = [
     techStack: ['HTML', 'CSS'],
     description: 'A responsive login and signup system with basic form validation, showcasing fundamental web development skills.',
     links: [
-      { type: 'github', url: 'https://github.com/prathameshsaharkar/Login-Signup-System', icon: Github, text: 'GitHub' },
-      { type: 'live', url: 'https://login-signup-system-psi.vercel.app/', icon: ExternalLink, text: 'Live Demo' },
+      { type: 'github', url: 'https://github.com/prathamesh7002/login-page', icon: Github, text: 'GitHub' },
+      { type: 'live', url: 'https://login-page-4tbv8bofr-prathamesh7002s-projects.vercel.app/', icon: ExternalLink, text: 'Live Demo' },
     ],
     imageSrc: 'https://placehold.co/600x400.png',
     imageHint: 'authentication interface'
@@ -83,8 +84,8 @@ export const projectsData: Project[] = [
     techStack: ['Django'],
     description: 'A web application to calculate carbon footprint based on user inputs, built with Django framework.',
     links: [
-      { type: 'github', url: 'https://github.com/prathameshsaharkar/Carbon-Footprint-Calculator', icon: Github, text: 'GitHub' },
-      { type: 'live', url: 'https://carboncalculator.example.com', icon: ExternalLink, text: 'Live Demo' }, // Placeholder URL
+      { type: 'github', url: 'https://github.com/prathamesh7002/co2-footprint-calculator', icon: Github, text: 'GitHub' },
+      { type: 'live', url: 'https://co2-footprint-calculator.onrender.com', icon: ExternalLink, text: 'Live Demo' },
     ],
     imageSrc: 'https://placehold.co/600x400.png',
     imageHint: 'eco calculator'
@@ -95,8 +96,8 @@ export const projectsData: Project[] = [
     techStack: ['Django'],
     description: 'A digital library system for managing books and user interactions, developed using Django.',
     links: [
-      { type: 'github', url: 'https://github.com/prathameshsaharkar/Digital-Library', icon: Github, text: 'GitHub' },
-      { type: 'live', url: 'https://digitallibrary.example.com', icon: ExternalLink, text: 'Live Demo' }, // Placeholder URL
+      { type: 'github', url: 'https://github.com/prathamesh7002/digital-library', icon: Github, text: 'GitHub' },
+      { type: 'live', url: 'https://digital-library-k5h0.onrender.com', icon: ExternalLink, text: 'Live Demo' },
     ],
     imageSrc: 'https://placehold.co/600x400.png',
     imageHint: 'online library'
@@ -107,8 +108,8 @@ export const projectsData: Project[] = [
     techStack: ['Flask'],
     description: 'A CRUD application for creating, reading, updating, and deleting notes, built with Flask.',
     links: [
-      { type: 'github', url: 'https://github.com/prathameshsaharkar/Notes-App-Flask', icon: Github, text: 'GitHub' },
-      { type: 'live', url: 'https://notesapp.example.com', icon: ExternalLink, text: 'Live Demo' }, // Placeholder URL
+      { type: 'github', url: 'https://github.com/prathamesh7002/Notes_app', icon: Github, text: 'GitHub' },
+      { type: 'live', url: 'https://notes-app-pprp.onrender.com', icon: ExternalLink, text: 'Live Demo' },
     ],
     imageSrc: 'https://placehold.co/600x400.png',
     imageHint: 'note taking'
@@ -119,7 +120,7 @@ export const projectsData: Project[] = [
     techStack: ['Python', 'Tkinter'],
     description: 'A desktop application for converting various scientific units, using Python and Tkinter for the GUI.',
     links: [
-      { type: 'github', url: 'https://github.com/prathameshsaharkar/Scientific-Unit-Converter', icon: Github, text: 'GitHub' },
+      { type: 'github', url: 'https://github.com/prathamesh7002/microproject', icon: Github, text: 'GitHub' },
       { type: 'details', icon: Mail, text: 'Details on request' },
     ],
     imageSrc: 'https://placehold.co/600x400.png',
@@ -131,8 +132,8 @@ export const projectsData: Project[] = [
     techStack: ['MySQL', 'Python'],
     description: 'A system for managing car rentals, customers, and bookings, with a MySQL database backend.',
     links: [
-      { type: 'github', url: 'https://github.com/prathameshsaharkar/Car-Rental-System', icon: Github, text: 'GitHub' },
-      { type: 'details', icon: Mail, text: 'Details on request' },
+      { type: 'details', icon: Github, text: 'GitHub on request' }, // Updated as new link not provided
+      { type: 'details', icon: Mail, text: 'Demo on request' },
     ],
     imageSrc: 'https://placehold.co/600x400.png',
     imageHint: 'vehicle rental'
@@ -143,8 +144,8 @@ export const projectsData: Project[] = [
     techStack: ['HTML', 'CSS', 'Figma'],
     description: 'A redesign of the Jobringer platform, focusing on UI/UX improvements. Implemented frontend based on Figma design.',
     links: [
-      { type: 'github', url: 'https://github.com/prathameshsaharkar/Jobringer-Redesign', icon: Github, text: 'GitHub' },
-      { type: 'live', url: 'https://jobringer-redesign.vercel.app/', icon: ExternalLink, text: 'Live Demo' },
+      { type: 'github', url: 'https://github.com/prathamesh7002/redesign-assignment', icon: Github, text: 'GitHub' },
+      { type: 'live', url: 'https://redesign-assignment-jobringer.vercel.app/', icon: ExternalLink, text: 'Live Demo' },
     ],
     imageSrc: 'https://placehold.co/600x400.png',
     imageHint: 'job platform'
@@ -158,9 +159,10 @@ export interface SocialLink {
 }
 
 export const socialLinks: SocialLink[] = [
-  { name: 'GitHub', url: 'https://github.com/prathameshsaharkar', icon: Github },
-  { name: 'LinkedIn', url: 'https://linkedin.com/in/prathamesh-saharkar', icon: Linkedin }, // Placeholder URL
-  { name: 'Instagram', url: 'https://instagram.com/prathamesh.saharkar_', icon: Instagram }, // Placeholder URL
+  { name: 'GitHub', url: 'https://github.com/prathamesh7002', icon: Github },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/prathamesh-saharkar-99563a2b0', icon: Linkedin },
+  { name: 'Instagram', url: 'https://www.instagram.com/prathameshsaharkar/?hl=en', icon: Instagram },
 ];
 
 export const RESUME_PATH = "/Prathamesh_Saharkar_Resume.pdf"; // User needs to add this file to /public
+
