@@ -1,6 +1,7 @@
+
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -24,6 +25,12 @@ type FormData = z.infer<typeof formSchema>;
 const ContactForm = () => {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const {
     register,
     handleSubmit,
@@ -69,6 +76,11 @@ const ContactForm = () => {
       setIsLoading(false);
     }
   };
+
+  if (!mounted) {
+    // Render nothing or a placeholder on the server and initial client render
+    return null; 
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
