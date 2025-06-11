@@ -43,11 +43,11 @@ const ContactForm = () => {
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     setIsLoading(true);
     try {
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID";
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID";
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY";
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_upn6ol1";
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_c5593ug";
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "pJrUF80UK3zgK9FBQ";
 
-      if (serviceId === "YOUR_SERVICE_ID" || templateId === "YOUR_TEMPLATE_ID" || publicKey === "YOUR_PUBLIC_KEY") {
+      if (serviceId === "service_upn6ol1" || templateId === "template_c5593ug" || publicKey === "pJrUF80UK3zgK9FBQ") {
         console.error("EmailJS environment variables not set. Please configure them in .env.local or replace placeholders.");
         toast({
           title: "Configuration Error",
