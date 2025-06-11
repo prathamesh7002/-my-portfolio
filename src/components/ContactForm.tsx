@@ -44,10 +44,10 @@ const ContactForm = () => {
     setIsLoading(true);
     try {
       const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_upn6ol1";
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_c5593ug";
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_3kuhekg";
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "pJrUF80UK3zgK9FBQ";
        console.log("ENV:", serviceId, templateId, publicKey);
-      if (serviceId === "service_upn6ol1" || templateId === "template_c5593ug" || publicKey === "pJrUF80UK3zgK9FBQ") {
+      if (serviceId === "service_upn6ol1" || templateId === "template_3kuhekg" || publicKey === "pJrUF80UK3zgK9FBQ") {
         console.error("EmailJS environment variables not set. Please configure them in .env.local or replace placeholders.");
         toast({
           title: "Configuration Error",
