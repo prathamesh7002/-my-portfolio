@@ -34,7 +34,7 @@ const HeroSection = () => {
 
         {/* Main Headline */}
         <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-6 leading-tight tracking-tight">
-          Architecting Scalable Systems & <br className="hidden sm:inline" />
+          Computer Engineering Student Software Development & <br className="hidden sm:inline" />
           <span className="bg-gradient-to-r from-primary via-blue-500 to-accent bg-clip-text text-transparent">
             AI-Powered Web Solutions
           </span>
