@@ -24,8 +24,8 @@ const Footer = () => {
         <p className="text-sm">
           Built by Prathamesh Saharkar &copy; {currentYear}
         </p>
-         <p className="text-xs mt-2 text-muted-foreground/70">
-          Powered by Next.js & Tailwind CSS. Designed with care.
+         <p className="text-xs mt-2 text-muted-foreground/80">
+          Computer Engineering @ VIT Pune • Diploma in IT (95.75%) • SuPrathon 2K25 National Winner
         </p>
       </div>
     </footer>

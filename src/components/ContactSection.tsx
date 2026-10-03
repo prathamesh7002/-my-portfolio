@@ -4,11 +4,12 @@ import { socialLinks } from "@/lib/data";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Building2, GraduationCap } from "lucide-react";
 
 const ContactSection = () => {
   const contactEmail = "prathmeshsaharkar@gmail.com";
-  const contactLocation = "Nagpur, India";
+  const contactLocation = "Pune / Nagpur, Maharashtra, India";
+  const contactCollege = "Vishwakarma Institute of Technology (VIT), Pune";
 
 
   return (
@@ -66,11 +67,15 @@ const ContactSection = () => {
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="flex items-center text-muted-foreground">
-                <MapPin className="mr-3 h-5 w-5 text-primary" />
+                <Building2 className="mr-3 h-5 w-5 text-primary shrink-0" />
+                <span>{contactCollege}</span>
+              </div>
+              <div className="flex items-center text-muted-foreground">
+                <MapPin className="mr-3 h-5 w-5 text-primary shrink-0" />
                 <span>{contactLocation}</span>
               </div>
               <div className="flex items-center text-muted-foreground">
-                <Mail className="mr-3 h-5 w-5 text-primary" />
+                <Mail className="mr-3 h-5 w-5 text-primary shrink-0" />
                 <a href={`mailto:${contactEmail}`} className="hover:text-primary transition-colors">
                   {contactEmail}
                 </a>

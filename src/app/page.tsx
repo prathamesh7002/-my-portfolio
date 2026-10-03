@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
+import AchievementsSection from "@/components/AchievementsSection";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ResumeSection from "@/components/ResumeSection";
@@ -15,6 +16,7 @@ export default function Home() {
       <main className="flex flex-col min-h-screen">
         <HeroSection />
         <AboutSection />
+        <AchievementsSection />
         <SkillsSection />
         <ProjectsSection />
         <ResumeSection />

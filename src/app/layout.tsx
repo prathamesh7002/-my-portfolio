@@ -1,10 +1,24 @@
-import type {Metadata} from 'next';
+import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'Prathamesh Saharkar | Portfolio',
-  description: 'Personal developer portfolio for Prathamesh Ajay Saharkar, an IT student, passionate coder, and real-world project builder.',
+  title: 'Prathamesh Saharkar | VIT Pune Comp Engg | National Hackathon Winner',
+  description: 'Portfolio of Prathamesh Ajay Saharkar — Computer Engineering student at VIT Pune, 95.75% Diploma in IT (Distinction), and National Winner of SuPrathon 2K25. Full-Stack Developer proficient in React, Next.js, Django, and Gemini AI.',
+  keywords: [
+    'Prathamesh Saharkar',
+    'VIT Pune',
+    'Computer Engineering',
+    'SuPrathon 2K25 National Winner',
+    'MediSafe Health Locker',
+    'Government Hostel Admission Portal',
+    'Full-Stack Developer',
+    'React',
+    'Next.js',
+    'Django',
+    'Python',
+  ],
+  authors: [{ name: 'Prathamesh Saharkar' }],
 };
 
 export default function RootLayout({

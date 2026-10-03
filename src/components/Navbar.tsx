@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Trophy } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import { Button } from "./ui/button";
 import { navLinks } from "@/lib/data";
@@ -14,7 +14,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 40);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -23,43 +23,84 @@ const Navbar = () => {
   return (
     <nav className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-      isScrolled ? "bg-background/80 backdrop-blur-md shadow-lg py-3" : "py-4 bg-transparent"
+      isScrolled 
+        ? "bg-background/85 backdrop-blur-md shadow-md py-2.5 border-b border-border/50" 
+        : "py-4 bg-transparent"
     )}>
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link href="#home" className="text-lg md:text-xl font-headline font-semibold text-foreground hover:text-primary transition-colors">
-          Prathamesh Saharkar <span className="hidden sm:inline">| Aspiring IT Student</span>
+        <Link href="#home" className="flex items-center gap-2 group">
+          <span className="text-lg md:text-xl font-headline font-bold text-foreground group-hover:text-primary transition-colors">
+            Prathamesh Saharkar
+          </span>
+          <span className="hidden sm:inline-flex items-center gap-1 text-[11px] font-medium text-muted-foreground px-2 py-0.5 rounded-full bg-secondary/60 border border-border/50">
+            VIT Pune • Comp Engg
+          </span>
         </Link>
-        <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
+
+        {/* Desktop Nav */}
+        <div className="hidden md:flex items-center space-x-1 lg:space-x-2">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="px-2 py-1 lg:px-3 text-foreground hover:text-primary transition-colors rounded-md font-medium text-sm"
+              className={cn(
+                "px-2.5 py-1.5 text-foreground hover:text-primary transition-colors rounded-md font-medium text-sm hover:bg-secondary/40",
+                link.href === '#achievements' && "text-amber-600 dark:text-amber-400 font-semibold"
+              )}
             >
-              {link.label}
+              {link.href === '#achievements' ? (
+                <span className="flex items-center gap-1">
+                  <Trophy className="h-3.5 w-3.5 text-amber-500" />
+                  {link.label}
+                </span>
+              ) : (
+                link.label
+              )}
             </Link>
           ))}
-          <ThemeToggle />
+          <div className="pl-2">
+            <ThemeToggle />
+          </div>
         </div>
-        <div className="md:hidden flex items-center">
+
+        {/* Mobile Nav Button */}
+        <div className="md:hidden flex items-center gap-2">
           <ThemeToggle />
-          <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} className="ml-2">
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            onClick={() => setIsOpen(!isOpen)} 
+            aria-label="Toggle navigation menu"
+            className="h-9 w-9"
+          >
+            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5 text-foreground" />}
           </Button>
         </div>
       </div>
+
+      {/* Mobile Nav Dropdown */}
       {isOpen && (
-        <div className="md:hidden mt-2 py-2 bg-background/95 backdrop-blur-md shadow-lg">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="block px-4 py-3 text-foreground hover:text-primary hover:bg-primary/10 transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
+        <div className="md:hidden mt-2 py-3 px-4 bg-background/95 backdrop-blur-lg shadow-xl border-b border-border/60">
+          <div className="flex flex-col space-y-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  "px-3 py-2 text-foreground hover:text-primary hover:bg-primary/10 transition-colors rounded-md text-sm font-medium flex items-center justify-between",
+                  link.href === '#achievements' && "text-amber-600 dark:text-amber-400 font-semibold"
+                )}
+                onClick={() => setIsOpen(false)}
+              >
+                <span>{link.label}</span>
+                {link.href === '#achievements' && (
+                  <span className="text-[10px] bg-amber-500/20 text-amber-600 dark:text-amber-400 font-bold px-2 py-0.5 rounded-full">
+                    Winner
+                  </span>
+                )}
+              </Link>
+            ))}
+          </div>
         </div>
       )}
     </nav>
